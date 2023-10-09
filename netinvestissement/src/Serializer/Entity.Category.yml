@@ -1,0 +1,40 @@
+App\Entity\Category:
+  access_type: public_method
+  exclusion_policy: all
+  properties:
+    id:
+      groups: [ 'category' ]
+      expose: true
+      type: string
+    name:
+      groups: [ 'category', 'pages', 'page_detail' ]
+      expose: true
+      type: string
+    urlRewrite:
+      groups: [ 'category' ]
+      expose: true
+      type: string
+    permalink:
+      groups: [ 'category' ]
+      expose: true
+      type: string
+    parent:
+      groups: ['other']
+      expose: true
+      type: App\Entity\Category
+    children:
+      groups: [ 'other' ]
+      expose: true
+      type: App\Entity\Category
+      accessor:
+        getter: getChildren
+        setter: addChildren
+    pages:
+      groups: [ 'category' ]
+      expose: true
+      type: App\Entity\Page
+      accessor:
+        getter: getPages
+        setter: addPage
+
+

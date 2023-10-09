@@ -1,0 +1,72 @@
+App\Entity\Page:
+  access_type: public_method
+  exclusion_policy: all
+  properties:
+    id:
+      groups: [ 'pages', 'page_detail' ]
+      expose: true
+      type: string
+    idPage:
+      groups: [ 'pages', 'page_detail' ]
+      expose: true
+      type: string
+    title:
+      groups: [ 'pages', 'page_detail' ]
+      expose: true
+      type: string
+    resume:
+      groups: [ 'pages', 'page_detail' ]
+      expose: true
+      type: string
+    content:
+      groups: [ 'page_detail' ]
+      expose: true
+      type: string
+    dateUpdate:
+      groups: [ 'pages', 'page_detail' ]
+      expose: true
+      type: DateTime
+    status:
+      groups: [ 'pages', 'page_detail' ]
+      expose: true
+      type: int
+    trackingView:
+      groups: [ 'pages', 'page_detail' ]
+      expose: true
+      type: int
+    user:
+      groups: [ 'pages', 'page_detail' ]
+      expose: true
+      type: App\Entity\User
+    mainCategory:
+      groups: [ 'pages', 'page_detail' ]
+      expose: true
+      type: App\Entity\Category
+    urlRewrite:
+      groups: [ 'pages', 'page_detail' ]
+      expose: true
+      type: string
+    permalink:
+      groups: [ 'pages', 'page_detail' ]
+      expose: true
+      type: string
+    categories:
+      groups: [ 'page_detail' ]
+      expose: true
+      type: ArrayCollection<App\Entity\Category>
+      accessor:
+        getter: getCategories
+        setter: addCategory
+    fullUrl:
+      groups: [ 'pages', 'page_detail' ]
+      expose: true
+      type: string
+      accessor:
+        getter: getFullUrl
+    orderedCategories:
+      groups: [ 'pages', 'page_detail']
+      expose: true
+      accessor:
+        getter: getOrderedCategories
+
+

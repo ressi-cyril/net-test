@@ -1,0 +1,285 @@
+{
+	"info": {
+		"_postman_id": "328b9578-ec3e-4dcf-b55e-63bbdec087fd",
+		"name": "net-investissement",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19089480"
+	},
+	"item": [
+		{
+			"name": "Categories",
+			"item": [
+				{
+					"name": "Get Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:80/api/categories/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"api",
+								"categories",
+								""
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "player@mail.com",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put Category",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"New Name\",\r\n    \"id_parent\": \"018b04f3-9b55-7ec8-b7a6-6c5d53fbce2d\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:80/api/categories/018b0f77-974c-75b1-b93a-630ac24a41fd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"api",
+								"categories",
+								"018b0f77-974c-75b1-b93a-630ac24a41fd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"voici une nouvelle Catégorie\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:80/api/categories/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"api",
+								"categories",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pages",
+			"item": [
+				{
+					"name": "Get Pages",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:80/api/pages/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"api",
+								"pages",
+								""
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "player@mail.com",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Page",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:80/api/pages/018b10ec-95be-7778-8324-282f977886ba",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"api",
+								"pages",
+								"018b10ec-95be-7778-8324-282f977886ba"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "player@mail.com",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Page",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\" : \"tedfdedd!\",\r\n    \"content\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cursus mattis molestie a iaculis at. Mauris vitae ultricies leo integer. Pulvinar sapien et ligula ullamcorper malesuada proin libero. At erat pellentesque adipiscing commodo elit at imperdiet. Ipsum a arcu cursus vitae congue mauris rhoncus aenean. Egestas sed tempus urna et pharetra pharetra massa. Mattis ullamcorper velit sed ullamcorper. Est lorem ipsum dolor sit. Vestibulum lorem sed risus ultricies tristique nulla aliquet enim.\",\r\n    \"user_email\" : \"fay.braeden@gmail.com\",\r\n    \"main_category\": \"category00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:80/api/pages/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"api",
+								"pages",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put Page",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\" : \"Nouveau title\",\r\n    \"content\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cursus mattis molestie a iaculis at. Mauris vitae ultricies leo integer. Pulvinar sapien et ligula ullamcorper malesuada proin libero. At erat pellentesque adipiscing commodo elit at imperdiet. Ipsum a arcu cursus vitae congue mauris rhoncus aenean. Egestas sed tempus urna et pharetra pharetra massa. Mattis ullamcorper velit sed ullamcorper. Est lorem ipsum dolor sit. Vestibulum lorem sed risus ultricies tristique nulla aliquet enim.\",\r\n    \"user_email\" : \"hans32@gmail.com\",\r\n    \"main_category\": \"category00\",\r\n    \"status\": 0,\r\n    \"tracking_view\" : 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:80/api/pages/018b1102-7678-7def-9bb0-d73b38798829",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"api",
+								"pages",
+								"018b1102-7678-7def-9bb0-d73b38798829"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Page",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\" : \"vNdenam45e !\",\r\n    \"content\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cursus mattis molestie a iaculis at. Mauris vitae ultricies leo integer. Pulvinar sapien et ligula ullamcorper malesuada proin libero. At erat pellentesque adipiscing commodo elit at imperdiet. Ipsum a arcu cursus vitae congue mauris rhoncus aenean. Egestas sed tempus urna et pharetra pharetra massa. Mattis ullamcorper velit sed ullamcorper. Est lorem ipsum dolor sit. Vestibulum lorem sed risus ultricies tristique nulla aliquet enim.\",\r\n    \"user_email\" : \"0parent@mail.com\",\r\n    \"id_category\": \"018b04f3-9b55-7ec8-b7a6-6c5d5353be5b\",\r\n    \"status\": 0,\r\n    \"tracking_view\" : 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:80/api/pages/018b1185-aae6-74f6-95b9-b459790b3c80",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"api",
+								"pages",
+								"018b1185-aae6-74f6-95b9-b459790b3c80"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patch Page userfullname",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_new_fullname\" : \"UserNewFullname\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:80/api/pages/018b1102-7678-7def-9bb0-d73b38798829/user-fullname",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"api",
+								"pages",
+								"018b1102-7678-7def-9bb0-d73b38798829",
+								"user-fullname"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

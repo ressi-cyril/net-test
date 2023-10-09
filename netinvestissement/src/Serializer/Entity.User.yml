@@ -1,0 +1,22 @@
+App\Entity\User:
+  access_type: public_method
+  exclusion_policy: all
+  properties:
+    id:
+      groups: [ 'pages', 'page_detail' ]
+      expose: true
+      type: string
+    email:
+      groups: [ 'pages', 'page_detail' ]
+      expose: true
+      type: string
+    fullName:
+      groups: [ 'pages', 'page_detail' ]
+      expose: true
+      type: string
+    parent:
+      groups: [ 'page_detail' ]
+      expose: true
+      type: App\Entity\User
+
+

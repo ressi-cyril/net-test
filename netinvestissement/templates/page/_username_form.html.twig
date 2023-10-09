@@ -1,0 +1,7 @@
+<form method="POST" action="{{ path('page_update_user_fullname', {'id': page.id}) }}" onsubmit="return confirm('Are you sure you want to update actual user fullname?');">
+    <label>Page User new fullname</label>
+    <input type="text" name="fullname">
+    <input type="hidden" name="_method" value="PATCH">
+    <input type="hidden" name="_token" value="{{ csrf_token('patch' ~ page.id) }}">
+    <button class="btn">Update</button>
+</form>

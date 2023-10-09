@@ -1,0 +1,12 @@
+{{ form_start(formPage) }}
+    {{ form_widget(formPage) }}
+<button type="submit">Update Page</button>
+{{ form_end(formPage) }}
+
+
+{% if formUserName is defined %}
+    {{ form_start(formUserName) }}
+    {{ form_widget(formUserName) }}
+    <button type="submit">Update User Fullname</button>
+    {{ form_end(formUserName) }}
+{% endif %}

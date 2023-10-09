@@ -1,0 +1,159 @@
+App\Entity\User:
+  properties:
+    fullName:
+      - Length:
+          min: 2
+          max: 255
+          groups: [ 'create', 'update' ]
+    email:
+      - Email:
+          groups: [ 'create', 'update' ]
+    parent:
+      - Valid:
+          groups: [ 'create' ]
+
+App\Entity\Category:
+  constraints:
+    - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity:
+        fields: [ 'name' ]
+        message: 'name already used'
+        groups: [ 'create', 'update' ]
+  properties:
+    name:
+      - Length:
+          min: 2
+          max: 255
+          groups: [ 'create', 'update' ]
+    urlRewrite:
+      - NotBlank:
+          groups: [ 'create', 'update' ]
+    permalink:
+      - NotBlank:
+          groups: [ 'create', 'update' ]
+      - Length:
+          max: 255
+          groups: [ 'create', 'update' ]
+    parent:
+      - Valid:
+          groups: [ 'update' ]
+
+App\Entity\Page:
+  constraints:
+    - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity:
+        fields: [ 'title' ]
+        message: 'title already used'
+        groups: [ 'create', 'update' ]
+  properties:
+    title:
+      - Length:
+          min: 2
+          max: 50
+          groups: [ 'create', 'update' ]
+    resume:
+      - Length:
+          max: 255
+          groups: [ 'create', 'update' ]
+    content:
+      - Length:
+          min: 10
+          max: 65535
+          groups: [ 'create', 'update' ]
+    dateUpdate:
+      - NotBlank:
+          groups: [ 'create', 'update' ]
+    status:
+      - Type:
+          type: 'integer'
+          groups: [ 'create', 'update' ]
+    trackingView:
+      - Type:
+          type: 'integer'
+          groups: [ 'create', 'update' ]
+    user:
+      - Valid:
+          groups: [ 'create', 'update' ]
+    mainCategory:
+      - Valid:
+          groups: [ 'create', 'update' ]
+    urlRewrite:
+      - NotBlank:
+          groups: [ 'create', 'update' ]
+      - Length:
+          min: 2
+          max: 255
+          groups: [ 'create', 'update' ]
+    permalink:
+      - Length:
+          max: 255
+          groups: [ 'create', 'update' ]
+    categories:
+      - Valid:
+          groups: [ 'create', 'update' ]
+
+App\Model\CategoryDto:
+  properties:
+    name:
+      - NotNull:
+            message: 'name is missing.'
+            groups: [ 'create' ]
+      - Length:
+          min: 2
+          max: 255
+          groups: [ 'create', 'update' ]
+    idParent:
+      - NotNull:
+          message: 'id_parent is missing.'
+          groups: [ 'update' ]
+
+App\Model\PageDto:
+  properties:
+    title:
+      - NotNull:
+          message: 'title is missing.'
+          groups: [ 'create' ]
+      - Length:
+          min: 2
+          max: 255
+          groups: [ 'create', 'update' ]
+    content:
+      - NotNull:
+          message: 'content is missing.'
+          groups: [ 'create' ]
+      - Length:
+          min: 10
+          max: 65535
+          groups: [ 'create', 'update' ]
+    userEmail:
+      - NotNull:
+          message: 'user_email is missing.'
+          groups: [ 'create' ]
+    mainCategory:
+      - Type:
+          type: 'string'
+      - NotNull:
+          message: 'main_category is missing.'
+          groups: [ 'create' ]
+    status:
+      - NotNull:
+          message: 'status is missing.'
+          groups: [ 'update' ]
+      - Type:
+          type: 'bool'
+          message: 'status must be a boolean value.'
+          groups: [ 'update' ]
+    trackingView:
+      - NotNull:
+          message: 'tracking_view is missing.'
+          groups: [ 'update' ]
+      - Type:
+          type: 'bool'
+          message: 'tracking_view must be a boolean value.'
+          groups: [ 'update' ]
+    userNewFullname:
+      - NotNull:
+          message: 'user_new_fullname is missing.'
+          groups: [ 'page_fullname' ]
+      - Length:
+          min: 2
+          max: 255
+          groups: [ 'page_fullname' ]
